@@ -11,7 +11,7 @@
     <artifactId>classhub-bootstrap</artifactId>
 
     <dependencies>
-    <dependency>
+        <dependency>
             <groupId>com.tutoring</groupId>
             <artifactId>classhub-controller</artifactId>
             <version>${project.version}</version>
