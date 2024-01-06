@@ -20,6 +20,7 @@
 		<module>classhub-bootstrap</module>
 		<module>classhub-controller</module>
 		<module>classhub-frontend</module>
+		<module>classhub-domain</module>
 	</modules>
 	<dependencies>
 <!--		<dependency>-->
