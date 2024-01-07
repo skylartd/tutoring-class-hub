@@ -1,0 +1,40 @@
+type Query {
+    classRooms: [ClassRoom]
+    classRoomById(id: ID): ClassRoom
+    students: [Student]
+    studentById(id: ID): Student
+    studentPayments: [StudentPayment]
+    studentPaymentById: StudentPayment
+}
+
+type ClassRoom {
+    id: ID
+    title: String
+    pricePerStudent: Float
+    active: Boolean
+    students: [Student]
+    studentPayments: [StudentPayment]
+    createdDate: LocalDateTime
+    updatedDate: LocalDateTime
+}
+
+type Student {
+    id: ID
+    fullName: String
+    email: String
+    enrolled: Boolean
+    enrolledClasses: [ClassRoom]
+    studentPayments: [StudentPayment]
+    createdDate: LocalDateTime
+    updatedDate: LocalDateTime
+}
+
+type StudentPayment {
+    id: ID
+    classRoom: ClassRoom
+    student: Student
+    amount: Float
+    paid: Boolean
+    createdDate: LocalDateTime
+    updatedDate: LocalDateTime
+}
