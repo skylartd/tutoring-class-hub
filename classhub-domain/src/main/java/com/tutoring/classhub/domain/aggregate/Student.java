@@ -9,7 +9,7 @@ public class Student {
     private String fullName;
     private String email;
     private boolean enrolled;
-    private UUID enrolledClassId;
+    private List<UUID> enrolledClassIds;
     private List<UUID> studentPaymentIds;
     private LocalDateTime createdDate;
     private LocalDateTime updatedDate;
