@@ -12,78 +12,78 @@
 
   <artifactId>classhub-frontend</artifactId>
 
-  <build>
-    <resources>
-      <resource>
-        <directory>ui-src</directory>
-      </resource>
-    </resources>
-    <plugins>
-      <plugin>
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.15.0</version>
-        <configuration>
-          <nodeVersion>v20.10.0</nodeVersion>
-        </configuration>
-        <executions>
-          <execution>
-            <id>install-node-and-npm</id>
-            <goals>
-              <goal>install-node-and-npm</goal>
-            </goals>
-            <phase>generate-resources</phase>
-          </execution>
-          <execution>
-            <id>npm install</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
+  <profiles>
+    <profile>
+      <id>package-frontend</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <version>1.15.0</version>
             <configuration>
-              <arguments>install</arguments>
+              <nodeVersion>v20.10.0</nodeVersion>
             </configuration>
-          </execution>
-          <!-- <execution>
-              <id>npm lint</id>
-              <goals>
+            <executions>
+              <execution>
+                <id>install-node-and-npm</id>
+                <goals>
+                  <goal>install-node-and-npm</goal>
+                </goals>
+                <phase>generate-resources</phase>
+              </execution>
+              <execution>
+                <id>npm install</id>
+                <goals>
                   <goal>npm</goal>
-              </goals>
-              <configuration>
-                  <arguments>run lint</arguments>
-              </configuration>
-          </execution> -->
-          <execution>
-            <id>npm build</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <phase>generate-resources</phase>
-            <configuration>
-              <arguments>run build</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npm postBuild</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <phase>generate-resources</phase>
-            <configuration>
-              <arguments>run postBuild</arguments>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npm test</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <phase>verify</phase>
-            <configuration>
-              <arguments>test</arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+                </goals>
+                <configuration>
+                  <arguments>install</arguments>
+                </configuration>
+              </execution>
+              <!-- <execution>
+                  <id>npm lint</id>
+                  <goals>
+                      <goal>npm</goal>
+                  </goals>
+                  <configuration>
+                      <arguments>run lint</arguments>
+                  </configuration>
+              </execution> -->
+              <execution>
+                <id>npm build</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <phase>generate-resources</phase>
+                <configuration>
+                  <arguments>run build</arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>npm postBuild</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <phase>generate-resources</phase>
+                <configuration>
+                  <arguments>run postBuild</arguments>
+                </configuration>
+              </execution>
+              <execution>
+                <id>npm test</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <phase>verify</phase>
+                <configuration>
+                  <arguments>test</arguments>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
